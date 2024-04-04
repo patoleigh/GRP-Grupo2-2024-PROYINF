@@ -1,6 +1,6 @@
 # GRP-Grupo2-2024-PROYINF
 
-Este es el repositorio del "Grupo 2", cuyos integrantes son:
+Este es el repositorio del "Grupo2", cuyos integrantes son:
 
 * Patricio Leigh  - 202156522-1
 * Flavio Oyarce   - 202173617-4
