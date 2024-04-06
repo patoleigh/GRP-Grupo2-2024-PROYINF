@@ -5,7 +5,7 @@ Este es el repositorio del "Grupo2", cuyos integrantes son:
 * Patricio Leigh  - 202156522-1
 * Flavio Oyarce   - 202173617-4
 * Roberto Escober - 201904561-k
-* Jeremy Zabala   -
+* Jeremy Zabala   - 202044535-4
 
 
 ## Wiki
