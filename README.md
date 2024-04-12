@@ -6,6 +6,7 @@ Este es el repositorio del "Grupo2", cuyos integrantes son:
 * Flavio Oyarce   - 202173617-4
 * Roberto Escobar - 201904561-k
 * Jeremy Zabala   - 202044535-4
+* **Tutor**: Christian Ossa
 
 
 ## Wiki
