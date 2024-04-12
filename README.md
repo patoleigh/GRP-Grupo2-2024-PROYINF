@@ -4,9 +4,9 @@ Este es el repositorio del "Grupo2", cuyos integrantes son:
 
 
 * Patricio Leigh &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp; 202156522-1
-* Flavio Oyarce &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp; 202173617-4
-* Roberto Escobar &nbsp; - &nbsp; 201904561-k
-* Jeremy Zabala &nbsp; - &nbsp; 202044535-4
+* Flavio Oyarce &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp; 202173617-4
+* Roberto Escobar &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp; 201904561-k
+* Jeremy Zabala &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp; 202044535-4
 * **Tutor**: Christian Ossa
 
 
