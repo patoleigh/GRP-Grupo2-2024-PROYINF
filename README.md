@@ -10,7 +10,7 @@ Este es el repositorio del "Grupo2", cuyos integrantes son:
 * **Tutor**: Christian Ossa
 
 Tag 2:
-Para esta entrega se levanto el backend y se conecto con la base de datos,mostrando que carga en el localhost, para la base de datos usamos postgres. Para el front se hizo una avance en lo que queremos que despues sea la interfaz.
+Para esta entrega se levanto el backend y se conecto con la base de datos,mostrando que carga en el localhost, para la base de datos usamos postgres. Para el front se hizo una avance en base a React, que despues será parte de la interfaz.
 ## Wiki
 
 Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki)
