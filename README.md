@@ -11,15 +11,25 @@ Este es el repositorio del "Grupo2", cuyos integrantes son:
 
 Instrucciones:
 terminal en backpy:
+
 pip install flask pydicom numpy pyvista
+
 mkdir uploads
+
 python3 -m venv venv
+
 source venv/bin/activate
+
 pytohn3 app.py        (se activa el backend)
 
+
+
 terminal en fronted:
+
 npm init (creo)
+
 npm start
+
 
 
 ## Wiki
