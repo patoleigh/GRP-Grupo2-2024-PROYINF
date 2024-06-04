@@ -9,8 +9,19 @@ Este es el repositorio del "Grupo2", cuyos integrantes son:
 * Jeremy Zavala &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;          - &nbsp;&nbsp;&nbsp;&nbsp; 202044535-4
 * **Tutor**: Christian Ossa
 
-Tag 2:
-Para esta entrega se levanto el backend y se conecto con la base de datos,mostrando que carga en el localhost, para la base de datos usamos postgres. Para el front se hizo una avance en base a React, que despues será parte de la interfaz.
+Instrucciones:
+terminal en backpy:
+pip install flask pydicom numpy pyvista
+mkdir uploads
+python3 -m venv venv
+source venv/bin/activate
+pytohn3 app.py        (se activa el backend)
+
+terminal en fronted:
+npm init (creo)
+npm start
+
+
 ## Wiki
 
 Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki)
