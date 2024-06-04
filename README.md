@@ -10,6 +10,7 @@ Este es el repositorio del "Grupo2", cuyos integrantes son:
 * **Tutor**: Christian Ossa
 
 Instrucciones:
+
 terminal en backpy:
 
 pip install flask pydicom numpy pyvista
