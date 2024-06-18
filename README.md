@@ -30,7 +30,7 @@ pytohn3 app.py        (se activa el backend)
 
 terminal en fronted:
 
-npm init (creo)
+npm install
 
 npm start
 
