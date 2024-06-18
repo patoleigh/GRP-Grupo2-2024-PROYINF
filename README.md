@@ -16,13 +16,13 @@ Instrucciones:
 
 terminal en backpy:
 
-pip install flask pydicom numpy pyvista
-
 mkdir uploads
 
 python3 -m venv venv
 
 source venv/bin/activate
+
+pip install flask pydicom numpy pyvista (dentro del entorno)
 
 python3 app.py        (se activa el backend)
 
