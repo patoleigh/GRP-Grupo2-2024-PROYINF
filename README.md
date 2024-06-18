@@ -24,7 +24,7 @@ python3 -m venv venv
 
 source venv/bin/activate
 
-pytohn3 app.py        (se activa el backend)
+python3 app.py        (se activa el backend)
 
 
 
