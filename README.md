@@ -16,15 +16,16 @@ Instrucciones:
 
 terminal en backpy:
 
-mkdir uploads
+mkdir uploads(creamos una carpeta)
 
-python3 -m venv venv
+python3 -m venv venv(Creamos un entorno)
 
-source venv/bin/activate
+source venv/bin/activate (con esto entramos al entorno)
 
-pip install flask pydicom numpy pyvista (dentro del entorno)
+pip install flask pydicom numpy pyvista 
+pip install opencv-python
 
-python3 app.py        (se activa el backend)
+python3 app.py  (se activa el backend)
 
 
 
