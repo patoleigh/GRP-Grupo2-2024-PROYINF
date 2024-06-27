@@ -32,6 +32,8 @@ terminal en fronted:
 
 npm install
 
+npm install axios
+
 npm start
 
 
