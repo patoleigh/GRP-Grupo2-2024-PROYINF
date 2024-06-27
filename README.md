@@ -22,7 +22,7 @@ python3 -m venv venv(Creamos un entorno)
 
 source venv/bin/activate (con esto entramos al entorno)
 
-pip install flask pydicom numpy pyvista opencv-python
+pip install flask pydicom numpy pyvista opencv-python flask-cors
 
 python3 app.py  (se activa el backend)
 
