@@ -48,6 +48,7 @@ const App = () => {
       <header className="App-header">
         <img src={logoUSM} className="header-logo" alt="logo USM" />
         <img src={logo} className="App-logo" alt="logo" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
         <h1>Visualizador DICOM</h1>
       </header>
       <h1>Upload DICOM Files</h1>
