@@ -1,85 +1,18 @@
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import os
+import pydicom
 import numpy as np
 import pyvista as pv
-
-import pydicom as dicom
-import matplotlib.pyplot as plt
-
-
-##############################################################################################################
-def leer_y_procesar_carpetas(base_path, destino_base):
-    carpetas = [f.path for f in os.scandir(base_path) if f.is_dir()]
-
-    for carpeta in carpetas:
-        procesar_carpeta(carpeta, destino_base)
-
-def procesar_carpeta(carpeta, destino_base):
-    ct_images = [f for f in os.listdir(carpeta) if f.endswith('.dcm')]
-    if not ct_images:
-        print(f"No se encontraron archivos .dcm en la carpeta {carpeta}")
-        return
-    
-    slices = [dicom.read_file(os.path.join(carpeta, s), force=True) for s in ct_images]
-    slices = sorted(slices, key=lambda x: x.ImagePositionPatient[2])
-
-    pixel_spacing = slices[0].PixelSpacing
-    slices_thickess = slices[0].SliceThickness
-
-    sagital_aspect_ratio = pixel_spacing[1] / pixel_spacing[0]
-    coronal_aspect_ratio = pixel_spacing[1] / slices_thickess
-    axial_aspect_ratio = slices_thickess / pixel_spacing[0]
-
-    img_shape = list(slices[0].pixel_array.shape)
-    img_shape.append(len(slices))
-    volume3d = np.zeros(img_shape)
-
-    for i, s in enumerate(slices):
-        array2D = s.pixel_array
-        volume3d[:, :, i] = array2D
-
-    guardar_vistas(volume3d, img_shape, carpeta, destino_base)
-
-def guardar_vistas(volume3d, img_shape, carpeta, destino_base):
-    def guardar_vista(volume3d, img_shape, vista, aspecto, filename):
-        plt.figure()
-
-        if vista == 'sagital':
-            plt.title("Sagital")
-            plt.imshow(volume3d[:, :, img_shape[2] // 2], cmap='inferno')
-            plt.gca().set_aspect(aspecto)
-
-        elif vista == 'coronal':
-            plt.title("Coronal")
-            plt.imshow(volume3d[:, img_shape[1] // 2, :], cmap='inferno')
-            plt.gca().set_aspect(aspecto)
-
-        elif vista == 'axial':
-            plt.title("Axial")
-            plt.imshow(volume3d[img_shape[0] // 2, :, :].T, cmap='inferno')
-            plt.gca().set_aspect(aspecto)
-
-        plt.savefig(filename)
-        plt.close()
-
-    # Crear una carpeta de destino para las vistas transformadas
-    nombre_carpeta = os.path.basename(carpeta)
-    carpeta_destino = os.path.join(destino_base, nombre_carpeta)
-    os.makedirs(carpeta_destino, exist_ok=True)
-
-    aspecto_seleccionado = 1.0  # Ajusta esto según sea necesario
-
-    guardar_vista(volume3d, img_shape, 'sagital', aspecto_seleccionado, os.path.join(carpeta_destino, 'sagital.png'))
-    guardar_vista(volume3d, img_shape, 'coronal', aspecto_seleccionado, os.path.join(carpeta_destino, 'coronal.png'))
-    guardar_vista(volume3d, img_shape, 'axial', aspecto_seleccionado, os.path.join(carpeta_destino, 'axial.png'))
-
-##############################################################################################################
+import subprocess  
+import shutil
+from Creador_Vistas import crear_vistas_para_carpeta 
 
 app = Flask(__name__)
 CORS(app)
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+carpeta_destino = "vistas"
 
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
@@ -99,24 +32,49 @@ def upload_files():
         file_paths.append(file_path)
     return jsonify({'files': file_paths})
 
+
 @app.route('/vistas/<filename>')
 def get_image(filename):
-    ##########################################################
-    # Ruta base de las carpetas a procesar
-    base_path = './uploads/DATOS_DICOM'
-    # Ruta base para guardar las vistas
-    destino_base = './vistas'
+    return send_from_directory(os.path.join(app.root_path, 'vistas'), filename)
 
-    # Crear la carpeta de destino si no existe
-    os.makedirs(destino_base, exist_ok=True)
 
-    # Leer y procesar todas las carpetas
-    leer_y_procesar_carpetas(base_path, destino_base)
-    ##########################################################
+@app.route('/folders', methods=['GET'])
+def list_folders():
+    try:
+        folders = [f for f in os.listdir(UPLOAD_FOLDER) if os.path.isdir(os.path.join(UPLOAD_FOLDER, f))]
+        return jsonify(folders)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
+@app.route('/crear-vistas', methods=['POST'])
+def crear_vistas():
+    try:
+        data = request.json
+        carpeta_seleccionada = data.get('carpetaSeleccionada')
+
+        if not carpeta_seleccionada:
+            return jsonify({"error": "No se proporcionó la carpeta seleccionada"}), 400
+
+        resultado = crear_vistas_para_carpeta(carpeta_seleccionada)
+        return jsonify({"message": resultado}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
     
-    return send_from_directory(os.path.join(app.root_path, 'vistas/BSSFP'), filename)
-
+@app.route('/eliminar-vistas', methods=['POST'])
+def eliminar_vistas():
+    try:
+        for filename in os.listdir(carpeta_destino):
+            file_path = os.path.join(carpeta_destino, filename)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+        print(f'Carpeta {carpeta_destino} limpiada.')
+        return jsonify({"message": f'Carpeta {carpeta_destino} limpiada.'}), 200
+    except Exception as e:
+        print(f'Error al limpiar la carpeta {carpeta_destino}: {str(e)}')
+        return jsonify({"error": f'Error al limpiar la carpeta {carpeta_destino}: {str(e)}'}), 500
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
