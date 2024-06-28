@@ -2,8 +2,23 @@
   text-align: center;
 }
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.header-logo {
+  position: absolute; 
+  top: 10px;
+  left: 15px;
+  height: 130px; 
+}
+
+
 .App-logo {
-  height: 40vmin;
+  height: 15vmin;
   pointer-events: none;
 }
 
@@ -15,7 +30,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +50,39 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+main {
+  padding: 20px;
+}
+
+button {
+  background: none;
+  margin: 10px;
+  border: 1px solid #ccc;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%; 
+  max-width: 1000px;
+  margin: 0 auto; 
+}
+
+.zoomable-image {
+  transition: transform 0.2s ease;
+  width: 100%;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  width: 200px;
+  margin-top: 10px;
 }
