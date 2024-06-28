@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const ImageComponent = ({ imageName }) => {
+const ImageComponent = ({ imageName, zoomLevel }) => {
   const [imageSrc, setImageSrc] = useState('');
 
   useEffect(() => {
@@ -21,8 +21,17 @@ const ImageComponent = ({ imageName }) => {
   }, [imageName]);
 
   return (
-    <div>
-      {imageSrc ? <img src={imageSrc} alt={imageName} /> : <p>Loading...</p>}
+    <div className="image-container">
+      {imageSrc ? (
+        <img
+          src={imageSrc}
+          alt={imageName}
+          className="zoomable-image"
+          style={{ transform: `scale(${zoomLevel})` }}
+        />
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 };
