@@ -16,30 +16,6 @@ Este es el repositorio del "Grupo2", cuyos integrantes son:
 
 Puede acceder a las instrucciones de compilacion mediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki/instrucciones)
 
-terminal en backpy:
-
-python3 -m venv venv(Creamos un entorno)         // python -m venv venv en windows
-
-Set-ExecutionPolicy RemoteSigned -Scope Process     // solo en windows, en linux no es necesario
-
-source venv/bin/activate (con esto entramos al entorno)     //   .\venv\Scripts\Activate.ps1  en windows
-
-pip install flask pydicom numpy pyvista opencv-python flask-cors     
-
-python3 app.py  (se activa el backend)       // python app.py en windows
-
-
-
-terminal en fronted:
-
-npm install
-
-npm install axios
-
-npm start
-
-
-
 ## Wiki
 
 Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki)
