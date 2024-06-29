@@ -44,4 +44,4 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/patole
 
 ## Resultados Finales
 
-Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki)
+Puede acceder a los resultados finalesmediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki)
