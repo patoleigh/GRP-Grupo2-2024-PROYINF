@@ -16,15 +16,15 @@ Instrucciones:
 
 terminal en backpy:
 
-mkdir uploads(creamos una carpeta)
+python3 -m venv venv(Creamos un entorno)         // python -m venv venv en windows
 
-python3 -m venv venv(Creamos un entorno)
+Set-ExecutionPolicy RemoteSigned -Scope Process     // solo en windows, en linux no es necesario
 
-source venv/bin/activate (con esto entramos al entorno)
+source venv/bin/activate (con esto entramos al entorno)     //   .\venv\Scripts\Activate.ps1  en windows
 
-pip install flask pydicom numpy pyvista opencv-python flask-cors
+pip install flask pydicom numpy pyvista opencv-python flask-cors     
 
-python3 app.py  (se activa el backend)
+python3 app.py  (se activa el backend)       // python app.py en windows
 
 
 
