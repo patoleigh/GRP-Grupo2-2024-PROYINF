@@ -31,13 +31,12 @@ const FileUpload = ({ onFileUpload }) => {
         });
         onFileUpload(response.data.files);
 
-        // After successful upload, fetch updated folders list
         fetchUpdatedFolders();
       } catch (error) {
         console.error('Error uploading files', error);
       }
       setSelectedFiles([]);
-      setSelectedFolderName(''); // Clear the selected folder name after upload
+      setSelectedFolderName(''); 
     }
   };
 
@@ -45,7 +44,6 @@ const FileUpload = ({ onFileUpload }) => {
     try {
       const response = await axios.get('http://localhost:5000/folders');
       console.log('Carpetas actualizadas:', response.data);
-      // No necesitas setFolders aquí ya que `App` maneja el estado de las carpetas
     } catch (error) {
       console.error("Hubo un error obteniendo las carpetas: ", error);
     }

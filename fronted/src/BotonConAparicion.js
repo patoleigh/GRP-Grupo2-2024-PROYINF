@@ -10,6 +10,7 @@ const BotonConAparicion = ({ selectedFolder, handleVistasCreation }) => {
     const [zoomLevel1, setZoomLevel1] = useState(1);
     const [zoomLevel2, setZoomLevel2] = useState(1);
     const [zoomLevel3, setZoomLevel3] = useState(1);
+    const [vistasCreadas, setVistasCreadas] = useState(false);
  
     const handleButtonClick1 = () => {
         setShowImage1(true);
@@ -45,6 +46,7 @@ const BotonConAparicion = ({ selectedFolder, handleVistasCreation }) => {
           carpetaSeleccionada: selectedFolder
         });
         console.log(response.data.message); 
+        setVistasCreadas(true);
       } catch (error) {
         console.error('Error al llamar a la API:', error);
       }
@@ -54,6 +56,7 @@ const BotonConAparicion = ({ selectedFolder, handleVistasCreation }) => {
       setShowImage1(false);
       setShowImage2(false);
       setShowImage3(false);
+      setVistasCreadas(false);
 
     };
 
@@ -68,22 +71,24 @@ const BotonConAparicion = ({ selectedFolder, handleVistasCreation }) => {
     };
 
     useEffect(() => {
-      // Aquí podrías realizar alguna acción cuando selectedFolder cambie
-      // Por ejemplo, podrías actualizar el estado de mostrarBotones o realizar alguna otra lógica.
       console.log("Carpeta seleccionada cambió a:", selectedFolder);
     }, [selectedFolder]);
 
     return (
       <div>
-        <button onClick={() => {
-          toggleMostrarBotones();
-          handleCrearVistas(); // Llamar a la función para crear vistas aquí
-        }}>Crear Vistas</button>
-        <button onClick={() => {
-          toggleMostrarBotones();
-          handleEliminarVistas();
-          otrolimpiar();
-        }}>Limpiar</button>       
+        {!vistasCreadas && (
+          <button onClick={() => {
+            toggleMostrarBotones();
+            handleCrearVistas(); 
+          }}>Crear Vistas</button>          
+        )}
+        {vistasCreadas && (
+          <button onClick={() => {
+            toggleMostrarBotones();
+            handleEliminarVistas();
+            otrolimpiar();
+          }}>Limpiar</button>  
+        )}     
         {mostrarBotones && (
           <div>
           <div>

@@ -13,7 +13,6 @@ def guardar_vista(volume3d, img_shape, vista, aspecto, filename):
     else:
         raise ValueError(f'Vista "{vista}" no reconocida.')
 
-    # Normaliza la matriz de píxeles entre 0 y 255
     image_array = (image_array - np.min(image_array)) / (np.max(image_array) - np.min(image_array)) * 255
     image_array = image_array.astype(np.uint8)
 
@@ -47,8 +46,7 @@ def crear_vistas_para_carpeta(carpeta_seleccionada):
 
     os.makedirs(carpeta_destino, exist_ok=True)
 
-    # Guardar las tres vistas:
-    aspecto_seleccionado = 1.0  # Ajusta esto según sea necesario
+    aspecto_seleccionado = 1.0 
 
     guardar_vista(volume3d, img_shape, 'axial', aspecto_seleccionado, os.path.join(carpeta_destino, 'axial.png'))
     guardar_vista(volume3d, img_shape, 'sagital', aspecto_seleccionado, os.path.join(carpeta_destino, 'sagital.png'))

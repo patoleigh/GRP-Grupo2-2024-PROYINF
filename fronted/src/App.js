@@ -61,9 +61,6 @@ const App = () => {
             <BotonConAparicion BotonConAparicion selectedFolder={selectedFolder}/>
           </div>
         </div>
-        <div>
-          <h2></h2>
-        </div>
       </main>
     </div>
   );
