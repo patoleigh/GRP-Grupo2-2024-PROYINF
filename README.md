@@ -9,8 +9,9 @@ Este es el repositorio del "Grupo2", cuyos integrantes son:
 * Jeremy Zavala &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;          - &nbsp;&nbsp;&nbsp;&nbsp; 202044535-4
 * **Tutor**: Christian Ossa
 
-[Video](https://youtu.be/kE5XxT31a3o) del prototipo.
+## Video
 
+[Video](https://youtu.be/kE5XxT31a3o) del prototipo.
 
 ## Instrucciones:
 
