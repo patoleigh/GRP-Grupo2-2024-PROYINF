@@ -12,7 +12,9 @@ Este es el repositorio del "Grupo2", cuyos integrantes son:
 [Video](https://youtu.be/kE5XxT31a3o) del prototipo.
 
 
-Instrucciones:
+## Instrucciones:
+
+Puede acceder a las instrucciones de compilacion mediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki/instrucciones)
 
 terminal en backpy:
 
@@ -44,4 +46,4 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/patole
 
 ## Resultados Finales
 
-Puede acceder a los resultados finalesmediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki)
+Puede acceder a los resultados finales mediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki/resultados-finales)
