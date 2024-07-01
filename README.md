@@ -12,15 +12,16 @@ Este es el repositorio del "Grupo2", cuyos integrantes son:
 ## Video
 
 [Video](https://youtu.be/kE5XxT31a3o) del prototipo.
+Puede acceder al video de demostración en el siguiente [enlace](https://youtu.be/yAfE9zCTv2g).
 
 ## Instrucciones:
 
-Puede acceder a las instrucciones de compilacion mediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki/instrucciones)
+Puede acceder a las instrucciones de compilacion mediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki/instrucciones).
 
 ## Wiki
 
-Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki)
+Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki).
 
 ## Resultados Finales
 
-Puede acceder a los resultados finales mediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki/resultados-finales)
+Puede acceder a los resultados finales mediante el siguiente [enlace](https://github.com/patoleigh/GRP-Grupo2-2024-PROYINF/wiki/resultados-finales).
