@@ -11,8 +11,7 @@ Este es el repositorio del "Grupo2", cuyos integrantes son:
 
 ## Video
 
-[Video](https://youtu.be/kE5XxT31a3o) del prototipo.
-Puede acceder al video de demostración en el siguiente [enlace](https://youtu.be/yAfE9zCTv2g).
+Puede acceder al video demostración mediante el siguiente [enlace](https://youtu.be/yAfE9zCTv2g).
 
 ## Instrucciones:
 
